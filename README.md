@@ -1,7 +1,7 @@
 # Badgermole
 
-Badgermole is a library for creating an SSH App server for OTP (One Time Passwords) for authenticating requests to HTTP server. <br/>
-This library exists because username/password are unsafe in this day and age, while other OTP mechanics have become complicating.
+Badgermole is a library for creating an SSH App server for OTP (One-Time Passwords) for authenticating requests to HTTP server. <br/>
+This library exists because usernames and passwords are unsafe in this day and age, while other OTP mechanics have become complicated.
 
 ## Install
 
@@ -48,10 +48,9 @@ func main(){
             // authenticate key and return true if it is authorized to receive OTP" 
             return true
         },
-		Store:       badgermole.NewMemoryStore(), // you can create your own DB for OTP as long as it implements IStore interface 
+		Store: badgermole.NewMemoryStore(), // you can create your own DB for OTP as long as it implements IStore interface 
 	}
-
-    bmSrv, err := badgermole.NewServer(cfg)
+	bmSrv, err := badgermole.NewServer(cfg)
 	if err != nil {
 		log.Fatal("Error:", err)
 	}
