@@ -1,0 +1,20 @@
+{{template "header.html" . }}
+
+
+<h1>Home</h1>
+
+<ul>
+    {{ if .}}
+    <li><a href="/logout">Logout</a></li>
+    <li><a href="/users">Private list of users</a></li>
+    <li><a href="/profile">Private profile</a></li>
+    {{else}}
+    <li><a href="/signup">Signup</a></li>
+    <li><a href="/login">Login</a></li>
+    {{end}}
+    
+</ul>
+
+
+
+{{template "footer.html" . }}

@@ -1,0 +1,16 @@
+{{template "header.html" . }}
+
+
+<h1>Signup</h1>
+
+<br/>
+<form id="contact-form" hx-post="/signup" hx-swap="outerHTML">
+    <label>Name:</label><br />
+    <input type="text" name="name"><br />
+    <label>Public key:</label><br />
+    <textarea name="publickey" placeholder="ssh-ed25519 AAAA"></textarea><br />
+    <button type="submit">Submit</button>
+</form>
+
+
+{{template "footer.html" . }}

@@ -1,0 +1,17 @@
+{{ block "error" . }}
+    <p>Error: {{.}}</p>
+{{end}}
+
+
+
+{{ block "signup-success" . }}
+    <p>Success</p>
+    <br/>
+    <p><a href="/login">Now Login</a></p>
+{{end}}
+
+
+
+{{ block "not-correct-otp" . }}
+    <p>Error: OTP is not correct</p>
+{{end}}

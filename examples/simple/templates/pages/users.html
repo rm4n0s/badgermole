@@ -1,0 +1,9 @@
+{{template "header.html" . }}
+
+<h1>Users</h1>
+<ul>
+{{range $key, $value := .}}
+    <li><strong>{{$value}}</strong> : <p>{{$key}}</p> </li>
+{{end}}
+</ul>
+{{template "footer.html" . }}

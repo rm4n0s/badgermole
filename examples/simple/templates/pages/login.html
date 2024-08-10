@@ -1,0 +1,15 @@
+{{template "header.html" . }}
+
+
+<h1>Login</h1>
+<br/>
+<p>To receive One Time Password, execute this command line ssh -i ~/.ssh/your_private_key -p 10000 localhost </p>
+<br/>
+<form id="otp-form" hx-post="/login" hx-swap="outerHTML">
+    <label>One Time Password:</label><br />
+    <input type="text" name="otp"><br />
+    <button type="submit">Login</button>
+</form>
+
+
+{{template "footer.html" . }}
