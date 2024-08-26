@@ -54,7 +54,7 @@ func main() {
 	log.Println("OTP server:", sshhost)
 
 	go func(bmSrv *badgermole.Server) {
-		err := bmSrv.Start()
+		err := bmSrv.Run()
 		if err != nil {
 			log.Println("Error:", err)
 		}
@@ -67,7 +67,7 @@ func main() {
 
 	go func(ctx context.Context) {
 		<-ctx.Done()
-		bmSrv.Stop(ctx)
+		bmSrv.Shutdown(ctx)
 		httpSrv.Shutdown(ctx)
 		log.Println("bye!")
 	}(ctx)

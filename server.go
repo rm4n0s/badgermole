@@ -24,8 +24,17 @@ type Server struct {
 }
 
 func NewServer(config *Config) (*Server, error) {
+	if config.SshHost == "" {
+		return nil, errors.New("field SshHost is empty")
+	}
+	if config.SshKeyPath == "" {
+		return nil, errors.New("field SshKeyPath is empty")
+	}
 	if config.Store == nil {
-		return nil, errors.New("store is nil")
+		return nil, errors.New("field Store is nil")
+	}
+	if config.SshAuthFunc == nil {
+		return nil, errors.New("field SshAuthFunc is nil")
 	}
 	srv, err := wish.NewServer(
 		wish.WithAddress(config.SshHost),
@@ -70,7 +79,7 @@ func (s *Server) sshHandler(next ssh.Handler) ssh.Handler {
 	}
 }
 
-func (s *Server) Start() error {
+func (s *Server) Run() error {
 	err := s.srv.ListenAndServe()
 	if err != nil {
 		return fmt.Errorf("failed to serve SSH server: %w", err)
@@ -78,7 +87,7 @@ func (s *Server) Start() error {
 	return nil
 }
 
-func (s *Server) Stop(ctx context.Context) error {
+func (s *Server) Shutdown(ctx context.Context) error {
 	err := s.srv.Shutdown(ctx)
 	if err != nil {
 		return fmt.Errorf("failed to stop SSH server: %w", err)

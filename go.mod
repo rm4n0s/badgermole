@@ -1,6 +1,6 @@
 module github.com/rm4n0s/badgermole
 
-go 1.22.5
+go 1.22.6
 
 require github.com/charmbracelet/ssh v0.0.0-20240725163421-eb71b85b27aa
 
@@ -38,6 +38,6 @@ require (
 	github.com/charmbracelet/x/termios v0.1.0 // indirect
 	github.com/creack/pty v1.1.21 // indirect
 	github.com/google/uuid v1.6.0
-	golang.org/x/crypto v0.25.0 // indirect
+	golang.org/x/crypto v0.25.0
 	golang.org/x/sys v0.22.0 // indirect
 )
