@@ -9,7 +9,7 @@ import (
 	"sync"
 
 	"github.com/charmbracelet/ssh"
-	"github.com/rm4n0s/badgermole"
+	"github.com/rm4n0s/badgermole/v1"
 	gossh "golang.org/x/crypto/ssh"
 )
 

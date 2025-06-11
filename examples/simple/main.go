@@ -10,7 +10,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/rm4n0s/badgermole"
+	"github.com/rm4n0s/badgermole/v1"
 )
 
 func main() {

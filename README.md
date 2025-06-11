@@ -6,7 +6,7 @@ This library exists because usernames and passwords are unsafe in this day and a
 ## Install
 
 ```bash
-go get github.com/rm4n0s/badgermole
+go get github.com/rm4n0s/badgermole/v1
 ```
 
 
@@ -38,7 +38,7 @@ ssh -i ~/.ssh/your_private_key -p 10000 localhost
 This is just a preview
 
 ```go
-import	"github.com/rm4n0s/badgermole"
+import	"github.com/rm4n0s/badgermole/v1"
 
 func main(){
 	cfg := &badgermole.Config{
